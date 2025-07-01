@@ -441,7 +441,7 @@ const Header = () => {
                 <motion.a
                   whileHover={{ y: -3, backgroundColor: darkMode ? '#374151' : '#1f2937' }}
                   whileTap={{ scale: 0.95 }}
-                  href={`https://${github}`}
+                  href={`${github}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 bg-gray-800 hover:bg-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 text-white px-6 py-3 rounded-lg transition-all shadow-md hover:shadow-lg"
@@ -452,7 +452,7 @@ const Header = () => {
                 <motion.a
                   whileHover={{ y: -3, backgroundColor: darkMode ? '#0a66c2' : '#0a66c2' }}
                   whileTap={{ scale: 0.95 }}
-                  href={`https://${linkedin}`}
+                  href={`${linkedin}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 bg-blue-700 hover:bg-blue-800 dark:bg-blue-800 dark:hover:bg-blue-900 text-white px-6 py-3 rounded-lg transition-all shadow-md hover:shadow-lg"
