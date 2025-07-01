@@ -93,7 +93,7 @@ export const ProjectModal = ({ project, onClose }) => {
                         <button
                             type="button"
                             onClick={onClose}
-                            className="inline-flex justify-center rounded-md bg-white/80 hover:bg-white dark:bg-gray-600/80 dark:hover:bg-gray-500/80 px-4 py-2 text-sm font-semibold text-gray-900 dark:text-white shadow-xs ring-1 ring-gray-300/50 dark:ring-gray-500/50 ring-inset transition-all w-full sm:w-auto"
+                            className="inline-flex justify-center rounded-md mb-2 bg-white/80 hover:bg-white dark:bg-gray-600/80 dark:hover:bg-gray-500/80 px-4 py-2 text-sm font-semibold text-gray-900 dark:text-white shadow-xs ring-1 ring-gray-300/50 dark:ring-gray-500/50 ring-inset transition-all w-full sm:w-auto"
                         >
                             Close
                         </button>
