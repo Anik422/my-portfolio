@@ -1,0 +1,157 @@
+{
+  "personalInfo": {
+    "name": "Anik Saha",
+    "title": "Software Engineer | Problem Solver",
+    "email": "aniks422@gmail.com",
+    "phone": "+880-16440-94767",
+    "github": "https://github.com/Anik422",
+    "linkedin": "https://www.linkedin.com/in/anik-saha-696a22370/",
+    "summary": "Passionate software engineer with expertise in web development and problem solving. Strong background in competitive programming with 1000+ problems solved across platforms."
+  },
+  "skills": {
+    "languages": ["C/C++", "Python", "JavaScript", "Java", "SQL"],
+    "problemSolving": {
+      "description": "Proven ability to tackle complex problems through strong performance on platforms like:",
+      "platforms": [
+        "LeetCode [https://leetcode.com/u/aniks422/]",
+        "Codeforces [https://codeforces.com/profile/Anik422]",
+        "HackerRank [https://www.hackerrank.com/aniks422]",
+        "CodeChef [https://www.codechef.com/users/Anik422]",
+        "Beecrowd [https://judge.beecrowd.com/en/profile/588842]",
+        "AtCoder [https://atcoder.jp/users/Anik422]",
+        "Stack Overflow [https://stackoverflow.com/users/19297087/anik-saha]"
+      ],
+      "problemsSolved": "Solved over 1000 problems across these platforms"
+    },
+    "certificates": [
+      "Python (Basic) Certificate [https://www.hackerrank.com/certificates/d40ea883f8cf]"
+    ],
+    "technologies": [
+      "Django", "Fast API", "ReactJS", "Redux",
+      "Bootstrap", "Tailwind CSS", "Material UI",
+      "MySQL", "PostgreSQL", "SQLite",
+      "Git", "GitHub",
+      "POSTMAN",
+      "Selenium", "Playwright",
+      "Beautiful Soup", "Requests", "Scrapy"
+    ]
+  },
+  "experience": [
+    {
+      "company": "Trademajestic Limited, Dhaka",
+      "position": "Jr. Software Engineer (Backend)",
+      "duration": "",
+      "achievements": [
+        "Designed a web platform for centralized streetlight control, increasing operational efficiency by 30% using Django and MySQL.",
+        "Streamlined planning using Google Maps API, reducing labor by 50% and improving accuracy for city planning projects."
+      ],
+      "startDate": "2022-09-01",
+      "endDate": "Present"
+    },
+    {
+      "company": "Devotrix Inc, Khulna",
+      "position": "Intern (Software Development)",
+      "duration": "",
+      "achievements": [
+        "Gained practical experience in advanced web scraping, FastAPI, and OpenAI API integration, applying these tools to AI-driven data collection projects.",
+        "Focused on creating scalable, real-world solutions while enhancing proficiency in backend development and API optimization."
+      ],
+      "startDate": "2022-06-01",
+      "endDate": "2022-09-01"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Gmail Password Validation Automation with Python",
+      "type": "Automation",
+      "description": "This project offers a Python solution that automates password checking in Gmail, greatly enhancing your email marketing efficiency. With Playwright or Selenium, you are able to save a whopping 50% of time that you would normally spend typing multiple Gmail accounts manually.",
+      "technologies": ["Python", "Playwright", "Selenium", "Beautiful Soup"],
+      "year": 2021,
+      "private": true
+    },
+    {
+      "title": "NuComply-Generic-Parser",
+      "type": "Web Scraping",
+      "description": "Created and developed an automatic web content parsing program to retrieve and process data from several sources, such as PDFs, HTML, and hybrid formats. The tool incorporates a configurable configuration management system for scheduling, retry intervals, and URL-specific parsing flags. By substituting laborious manual content handling procedures, this system computerizes tasks for sub-URL processing and document tracking, with minimal human intervention and errors. The application also leverages the latest technologies such as OpenAI's dynamic XPath generation API, which further automates data extraction workflows.",
+      "technologies": [
+        "Python",
+        "FastAPI",
+        "OpenAI API",
+        "Selenium",
+        "Beautiful Soup",
+        "PostgreSQL"
+      ],
+      "year": 2022,
+      "private": true
+    },
+    {
+      "title": "Park Access Control System",
+      "type": "Web Application",
+      "description": "Created an affordable web application for park access control. This web application adopts a combination of QR code, IP, and location for safe login/logout without the need for expensive facial recognition or fingerprint reader. This is an innovative solution that offers a secure and affordable alternative compared to traditional access controls.",
+      "technologies": [
+        "Django",
+        "Bootstrap",
+        "MySQL",
+        "ReactJS",
+        "Redux",
+        "Material UI",
+        "Google Maps API"
+      ],
+      "year": 2023,
+      "private": true
+    },
+    {
+      "title": "London Borough Real Estate Platform (LBREP) - Backend",
+      "type": "Web Application",
+      "description": "A Django-based real estate listing platform with geographic information system (GIS) capabilities, allowing users to browse properties in London with spatial data and points of interest. The platform features comprehensive property listings, user management, and spatial query functionality.",
+      "technologies": [
+        "Django 4.2",
+        "Django REST Framework",
+        "PostgreSQL",
+        "PostGIS",
+        "GDAL",
+        "Djoser",
+        "Pillow",
+        "django-cors-headers",
+        "django-filter",
+        "psycopg2"
+      ],
+      "github": "https://github.com/Anik422/lbrep_backend.git",
+      "year": 2023,
+      "private": false
+    },
+    {
+      "title": "London Borough Real Estate Platform - Frontend",
+      "type": "Web Application",
+      "description": "A modern React-based frontend application for the London Borough Real Estate Platform (LBREP) that seamlessly connects to a Django REST API backend with advanced GIS functionality for property browsing and management.",
+      "technologies": [
+          "React 18",
+          "React Router v6",
+          "Context API",
+          "Axios",
+          "React-Leaflet",
+          "React Bootstrap",
+          "CSS3"
+        ],
+        "github": "https://github.com/Anik422/lbrep_course_frontend.git",
+        "year": 2023,
+        "private": false
+      }
+  ],
+  "education": [
+    {
+      "institution": "Green University of Bangladesh (GUB)",
+      "degree": "B.S.E. in Computer Science and Engineering",
+      "duration": "Aug 2022: Running",
+      "details": "CGPA: 3.14 (after 3rd year, 2nd semester)",
+      "coursework": "Object-Oriented Programming, Databases, Discrete Math, Data Structures, and Algorithms."
+    },
+    {
+      "institution": "Shyamoli Ideal Polytechnic Institute (SIPI)",
+      "degree": "Diploma In Computer Engineering",
+      "duration": "Aug 2017 - Feb 2022",
+      "details": "CGPA: 3.24",
+      "coursework": "OOP, Databases, Math, Electronics, Web Development, Computer Architecture, and Organization."
+    }
+  ]
+}
