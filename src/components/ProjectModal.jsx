@@ -66,25 +66,25 @@ export const ProjectModal = ({ project, onClose }) => {
                     <div className="bg-white/30 dark:bg-gray-700/50 px-6 py-4 sm:flex sm:flex-row-reverse gap-3 border-t border-white/30 dark:border-gray-600/50">
                         {project.github ? (
                             <a
-                                href={`https://${project.github}`}
+                                href={`${project.github}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 justify-center rounded-md bg-gray-800/90 hover:bg-gray-700/90 dark:bg-gray-600/90 dark:hover:bg-gray-500/90 px-4 py-2 text-sm font-semibold text-white shadow-xs transition-all w-full sm:w-auto"
+                                className="inline-flex items-center gap-2 mb-2 justify-center rounded-md bg-gray-800/90 hover:bg-gray-700/90 dark:bg-gray-600/90 dark:hover:bg-gray-500/90 px-4 py-2 text-sm font-semibold text-white shadow-xs transition-all w-full sm:w-auto"
                             >
                                 <FaGithub /> Source Code
                             </a>
                         ) : (
-                            <div className="inline-flex items-center gap-2 justify-center rounded-md bg-gray-100/80 dark:bg-gray-800/80 px-4 py-2 text-sm font-semibold text-gray-500 dark:text-gray-400 w-full sm:w-auto">
+                            <div className="inline-flex items-center gap-2 mb-2 justify-center rounded-md bg-gray-100/80 dark:bg-gray-800/80 px-4 py-2 text-sm font-semibold text-gray-500 dark:text-gray-400 w-full sm:w-auto">
                                 <FaLock /> Private Repository
                             </div>
                         )}
 
                         {project.liveDemo && (
                             <a
-                                href={`https://${project.liveDemo}`}
+                                href={`${project.liveDemo}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 justify-center rounded-md bg-blue-600/90 hover:bg-blue-500/90 px-4 py-2 text-sm font-semibold text-white shadow-xs transition-all w-full sm:w-auto"
+                                className="inline-flex items-center gap-2 mb-2 justify-center rounded-md bg-blue-600/90 hover:bg-blue-500/90 px-4 py-2 text-sm font-semibold text-white shadow-xs transition-all w-full sm:w-auto"
                             >
                                 <FaExternalLinkAlt /> Live Demo
                             </a>

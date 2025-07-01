@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { FaLock, FaTools } from 'react-icons/fa';
+import { FaLock, FaTools, FaUnlock } from 'react-icons/fa';
 import data from '../data/data.json';
 import { ProjectModal } from './ProjectModal';
 import { TechIcon } from './TechIcon';
@@ -47,12 +47,16 @@ const Projects = () => {
                       {project.title}
                     </h3>
                     <p className="text-sm text-gray-500 dark:text-gray-400">
-                      {project.type || 'Web Application'} • {project.year || '2023'}
+                      {project.type || 'Web Application'} • {project.year || '2025'}
                     </p>
                   </div>
-                  {project.private && (
+                  {project.private ? (
                     <div className="flex items-center gap-1 text-xs bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-200 px-2 py-1 rounded-full">
                       <FaLock className="text-xs" /> Private
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-1 text-xs bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200 px-2 py-1 rounded-full">
+                      <FaUnlock className="text-xs" /> Public
                     </div>
                   )}
                 </div>
