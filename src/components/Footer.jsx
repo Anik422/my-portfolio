@@ -25,7 +25,7 @@ const Footer = () => {
                 <FaPhone /> Call
               </a>
               <a 
-                href={`https://${github}`} 
+                href={`${github}`} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-blue-400 transition-colors"
@@ -33,7 +33,7 @@ const Footer = () => {
                 <FaGithub /> GitHub
               </a>
               <a 
-                href={`https://${linkedin}`} 
+                href={`${linkedin}`} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-blue-400 transition-colors"
