@@ -152,6 +152,13 @@
       "duration": "Aug 2017 - Feb 2022",
       "details": "CGPA: 3.24",
       "coursework": "OOP, Databases, Math, Electronics, Web Development, Computer Architecture, and Organization."
+    },
+    {
+      "institution": "Sohagpur S.K Pilot Model High School",
+      "degree": "Secondary School Certificate (SSC)",
+      "duration": "Jan 2012 - Feb 2017",
+      "details": "GPA: 4.05",
+      "coursework": "Science, Math, English, Bengali, and Social Science."
     }
   ]
 }

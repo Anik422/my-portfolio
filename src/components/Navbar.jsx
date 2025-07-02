@@ -11,12 +11,18 @@ const Navbar = ({ darkMode, toggleDarkMode, scrollTo, activeSection, isMobile })
   const [hoveredLink, setHoveredLink] = useState(null);
   const navItems = ['home', 'skills', 'experience', 'projects', 'education'];
 
+  const handleScroll = (name) => {
+    scrollTo(name);
+    setMenuOpen(false);
+  }
+
+
   return (
     <nav className="fixed w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-50 shadow-sm border-b border-gray-100 dark:border-gray-800">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <a 
           href="#home" 
-          onClick={(e) => { e.preventDefault(); scrollTo('home'); }} 
+          onClick={(e) => { e.preventDefault(); handleScroll('home'); }} 
           className="flex items-center"
         >
           <motion.div
@@ -105,7 +111,9 @@ const Navbar = ({ darkMode, toggleDarkMode, scrollTo, activeSection, isMobile })
               {navItems.map((item) => (
                 <motion.button
                   key={item}
-                  onClick={() => scrollTo(item)}
+                  onClick={() => handleScroll(item)}
+                  whileTap={{ scale: 0.95 }} // Add tap effect
+                  whileFocus={{ scale: 0.95 }} // Add focus effect
                   whileHover={{ x: 5 }}
                   className={`capitalize px-3 py-4 text-left border-b border-gray-100 dark:border-gray-700 flex items-center ${
                     activeSection === item

@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { FaGraduationCap, FaBook } from 'react-icons/fa';
+import { FaUniversity, FaGraduationCap, FaSchool, FaAward } from 'react-icons/fa';
 import data from '../data/data.json';
 
 const Education = () => {
@@ -9,51 +9,66 @@ const Education = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-16 px-4 bg-gray-50 dark:bg-gray-800" id="education" ref={ref}>
+    <section className="py-16 px-4 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900" id="education" ref={ref}>
       <div className="container mx-auto max-w-6xl">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-3xl font-bold mb-12 text-center text-blue-600 dark:text-blue-400"
+          className="text-4xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400"
         >
-          Education
+          My Education Journey
         </motion.h2>
-        
-        <div className="relative">
-          {/* Timeline bar */}
-          <div className="absolute left-4 md:left-1/2 h-full w-1 bg-blue-200 dark:bg-blue-800 transform -translate-x-1/2"></div>
-          
-          <div className="space-y-8">
-            {education.map((edu, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                className={`relative flex ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-start gap-6`}
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-4 md:left-1/2 w-6 h-6 bg-blue-600 dark:bg-blue-400 rounded-full transform -translate-x-1/2 flex items-center justify-center z-10">
-                  <FaGraduationCap className="text-white text-xs" />
-                </div>
-                
-                <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8'} mt-8`}>
-                  <div className={`p-6 rounded-lg shadow-md ${index % 2 === 0 ? 'bg-white dark:bg-gray-700' : 'bg-blue-50 dark:bg-gray-700'}`}>
-                    <h3 className="text-xl font-bold text-gray-800 dark:text-white">{edu.institution}</h3>
-                    <p className="text-blue-600 dark:text-blue-300 font-medium mb-2">{edu.degree}</p>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm mb-2">{edu.duration}</p>
-                    <p className="text-gray-700 dark:text-gray-200 mb-3">{edu.details}</p>
-                    
-                    <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
-                      <FaBook className="flex-shrink-0" />
-                      <span className="font-medium">Coursework:</span> {edu.coursework}
-                    </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {education.map((edu, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
+              className="relative group"
+            >
+              <div className="absolute inset-0 bg-white dark:bg-gray-700 rounded-xl shadow-lg transform group-hover:scale-105 transition-all duration-300"></div>
+
+              <div className="relative h-full p-6 border-2 border-gray-200 dark:border-gray-600 rounded-xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm overflow-hidden">
+                {/* Decorative elements */}
+                <div className="absolute top-0 right-0 w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-bl-full opacity-30"></div>
+                <div className="absolute bottom-0 left-0 w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-tr-full opacity-30"></div>
+
+                <div className="relative z-10">
+                  <div className="w-14 h-14 mb-4 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-600 dark:text-blue-300">
+                    {index === 0 ? (
+                      <FaUniversity className="text-xl" />
+                    ) : index === 1 ? (
+                      <FaGraduationCap className="text-xl" />
+                    ) : (
+                      <FaSchool className="text-xl" />
+                    )}
+                  </div>
+
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">{edu.institution}</h3>
+                  <p className="text-blue-600 dark:text-blue-300 font-medium mb-3">{edu.degree}</p>
+
+                  <div className="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-4">
+                    <span className="inline-block w-3 h-3 rounded-full bg-green-500 mr-2"></span>
+                    {edu.duration}
+                  </div>
+
+                  <p className="text-gray-600 dark:text-gray-300 mb-4">{edu.details}</p>
+
+                  <div className="pt-4 border-t border-gray-100 dark:border-gray-700">
+                    <h4 className="flex items-center text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      <FaAward className="mr-2 text-yellow-500" />
+                      Key Coursework
+                    </h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-400">{edu.coursework}</p>
                   </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
