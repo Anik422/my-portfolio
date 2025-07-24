@@ -25,7 +25,8 @@
     },
     "certificates": [
       "Python (Basic) Certificate by HackerRank [https://www.hackerrank.com/certificates/d40ea883f8cf]",
-      "JavaScript (Basic) Certificate by HackerRank [https://www.hackerrank.com/certificates/f2789ace0deb]"
+      "JavaScript (Basic) Certificate by HackerRank [https://www.hackerrank.com/certificates/f2789ace0deb]",
+      "Problem Solving (Basic) Certificate by HackerRank [https://www.hackerrank.com/certificates/01642fd1724a]"
     ],
     "technologies": [
       "Django", "Fast API", "ReactJS", "Redux",
