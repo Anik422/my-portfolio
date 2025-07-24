@@ -1,62 +1,104 @@
-import React from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaHeart } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { FaGithub, FaLinkedin, FaEnvelope, FaHeart, FaFileDownload } from 'react-icons/fa';
 import data from '../data/data.json';
 
 const Footer = () => {
-  const { email, phone, github, linkedin } = data.personalInfo;
+  const { email, github, linkedin, resume } = data.personalInfo;
 
   return (
-    <footer className="bg-gray-800 text-white py-12 px-4">
+    <motion.footer
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="bg-gray-800 text-white py-12 px-4"
+    >
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="text-center md:text-left">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ staggerChildren: 0.2 }}
+          className="flex flex-col md:flex-row justify-between items-center gap-8"
+        >
+          {/* Left Side */}
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, x: -30 },
+              visible: { opacity: 1, x: 0 }
+            }}
+            className="text-center md:text-left"
+          >
             <h3 className="text-2xl font-bold mb-4">Let's Connect</h3>
             <div className="flex flex-wrap justify-center md:justify-start gap-4">
-              <a 
-                href={`mailto:${email}`} 
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href={`mailto:${email}`}
                 className="flex items-center gap-2 hover:text-blue-400 transition-colors"
               >
                 <FaEnvelope /> Email
-              </a>
-              <a 
-                href={`tel:${phone.replace(/-/g, '')}`} 
-                className="flex items-center gap-2 hover:text-blue-400 transition-colors"
-              >
-                <FaPhone /> Call
-              </a>
-              <a 
-                href={`${github}`} 
-                target="_blank" 
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href={github}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-blue-400 transition-colors"
               >
                 <FaGithub /> GitHub
-              </a>
-              <a 
-                href={`${linkedin}`} 
-                target="_blank" 
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href={linkedin}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 hover:text-blue-400 transition-colors"
               >
                 <FaLinkedin /> LinkedIn
-              </a>
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href={resume}
+                target="_blank"
+                rel="noopener noreferrer"
+                download
+                className="flex items-center gap-2 hover:text-blue-400 transition-colors"
+              >
+                <FaFileDownload /> Resume
+              </motion.a>
             </div>
-          </div>
-          
-          <div className="text-center">
+          </motion.div>
+
+          {/* Right Side */}
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, x: 30 },
+              visible: { opacity: 1, x: 0 }
+            }}
+            className="text-center"
+          >
             <h3 className="text-xl font-bold mb-2">Anik Saha</h3>
             <p className="text-gray-400">Software Engineer | Problem Solver</p>
-          </div>
-        </div>
-        
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+          </motion.div>
+        </motion.div>
+
+        {/* Bottom Text */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400"
+        >
           <p className="flex items-center justify-center gap-1">
-            Made with <FaHeart className="text-red-500" /> by Anik Saha
+            Made with by Anik Saha
           </p>
           <p className="mt-2">© {new Date().getFullYear()} All rights reserved</p>
-        </div>
+        </motion.div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 
