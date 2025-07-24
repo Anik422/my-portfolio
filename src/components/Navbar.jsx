@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaSun, FaMoon, FaChevronDown, FaArrowRight } from 'react-icons/fa';
+import { FaSun, FaMoon, FaArrowRight } from 'react-icons/fa';
 import { HiMenu, HiX } from 'react-icons/hi';
 import data from '../data/data.json';
 import logo from '../assets/logo.svg';
