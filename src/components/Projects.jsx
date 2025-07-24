@@ -79,14 +79,14 @@ const Projects = () => {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={isInView ? { opacity: 1, scale: 1 } : {}}
                         transition={{ duration: 0.3, delay: index * 0.1 + idx * 0.05 }}
-                        className="flex items-center gap-2 px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm"
+                        className="flex items-center gap-2 px-3 py-1 text-gray-700 bg-gray-100 dark:bg-gray-700 dark:text-gray-100 rounded-full text-sm"
                       >
                         <TechIcon lang={tech} />
                         <span>{tech}</span>
                       </motion.div>
                     ))}
                     {project.technologies.length > 4 && (
-                      <div className="flex items-center px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm">
+                      <div className="flex items-center px-3 py-1 text-gray-700 bg-gray-100 dark:bg-gray-700 dark:text-gray-100 rounded-full text-sm">
                         +{project.technologies.length - 4} more
                       </div>
                     )}
