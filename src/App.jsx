@@ -5,6 +5,7 @@ import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Education from './components/Education';
 import Footer from './components/Footer';
+import Fiverr from './components/Fiverr'; // <-- এই লাইনটি যোগ করুন
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Skills />
         <Experience />
         <Projects />
+        <Fiverr /> {/* <-- এই লাইনটি এখানে যোগ করুন */}
         <Education />
       </main>
       <Footer />

@@ -1,6 +1,12 @@
-import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaHeart, FaFileDownload } from 'react-icons/fa';
-import data from '../data/data.json';
+import { motion } from "framer-motion";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaHeart,
+  FaFileDownload,
+} from "react-icons/fa";
+import data from "../data/data.json";
 
 const Footer = () => {
   const { email, github, linkedin, resume } = data.personalInfo;
@@ -10,7 +16,7 @@ const Footer = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="bg-gray-800 text-white py-12 px-4"
+      className="py-12 px-4 bg-gradient-to-b from-gray-800 to-gray-900 dark:from-gray-900 dark:to-black text-white"
     >
       <div className="container mx-auto">
         <motion.div
@@ -24,7 +30,7 @@ const Footer = () => {
           <motion.div
             variants={{
               hidden: { opacity: 0, x: -30 },
-              visible: { opacity: 1, x: 0 }
+              visible: { opacity: 1, x: 0 },
             }}
             className="text-center md:text-left"
           >
@@ -76,7 +82,7 @@ const Footer = () => {
           <motion.div
             variants={{
               hidden: { opacity: 0, x: 30 },
-              visible: { opacity: 1, x: 0 }
+              visible: { opacity: 1, x: 0 },
             }}
             className="text-center"
           >
@@ -95,7 +101,9 @@ const Footer = () => {
           <p className="flex items-center justify-center gap-1">
             Made with by Anik Saha
           </p>
-          <p className="mt-2">© {new Date().getFullYear()} All rights reserved</p>
+          <p className="mt-2">
+            © {new Date().getFullYear()} All rights reserved
+          </p>
         </motion.div>
       </div>
     </motion.footer>

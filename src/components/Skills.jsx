@@ -33,7 +33,7 @@ const Skills = () => {
   };
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b bg-gray-50 dark:bg-gray-900" id="skills" ref={ref}>
+    <section className="py-20 px-4  bg-gradient-to-b from-gray-50 to-white dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-800" id="skills" ref={ref}>
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial="hidden"

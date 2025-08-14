@@ -1,31 +1,104 @@
-import { useRef, useState } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { FaLock, FaTools, FaUnlock } from 'react-icons/fa';
-import data from '../data/data.json';
-import { ProjectModal } from './ProjectModal';
-import { TechIcon } from './TechIcon';
+import { useRef, useState, useEffect } from "react";
+import { motion, useInView } from "framer-motion";
+import { FaLock, FaTools, FaUnlock, FaSearch } from "react-icons/fa";
+import data from "../data/data.json";
+import { ProjectModal } from "./ProjectModal";
+import { TechIcon } from "./TechIcon";
 
 const Projects = () => {
   const { projects } = data;
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [selectedProject, setSelectedProject] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [activeFilter, setActiveFilter] = useState("All");
+  const [visibleCount, setVisibleCount] = useState(3);
 
+  const FILTERS = ["All", "Public", "Private", "Website", "Software/Tools"];
+
+  const filteredProjects = projects.filter((p) => {
+    const tags = [];
+    tags.push(p.private ? "Private" : "Public");
+
+    if ((p.type || "").toLowerCase().includes("web") || (p.category || "").toLowerCase().includes("website")) {
+      tags.push("Website");
+    }
+    if ((p.type || "").toLowerCase().includes("tool") || (p.category || "").toLowerCase().includes("tool") || (p.category || "").toLowerCase().includes("software")) {
+      tags.push("Software/Tools");
+    }
+
+    const term = searchTerm.trim().toLowerCase();
+    const matchesSearch =
+      term.length === 0 ||
+      (p.title || "").toLowerCase().includes(term) ||
+      (p.description || "").toLowerCase().includes(term);
+
+    return (activeFilter === "All" || tags.includes(activeFilter)) && matchesSearch;
+  });
+
+  // Reset visible items when filter/search changes
+  useEffect(() => {
+    setVisibleCount(3);
+  }, [activeFilter, searchTerm]);
+
+  const projectsToShow = filteredProjects.slice(0, visibleCount);
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800" id="projects" ref={ref}>
+    <section
+      className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"
+      id="projects"
+      ref={ref}
+    >
       <div className="container mx-auto max-w-6xl">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-4xl font-bold mb-16 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400"
+          className="text-4xl font-bold mb-10 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400"
         >
           My Projects
         </motion.h2>
-        
+
+        {/* Smart Filter Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.4 }}
+          className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-12"
+        >
+          {/* Search Bar */}
+          <div className="relative w-full md:w-1/3">
+            <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+            <input
+              type="text"
+              placeholder="Search projects..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full pl-10 pr-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          {/* Filter Pills */}
+          <div className="flex flex-wrap justify-center gap-2">
+            {FILTERS.map((label) => (
+              <button
+                key={label}
+                onClick={() => setActiveFilter(label)}
+                className={`px-4 py-1 rounded-full text-sm font-medium transition-all duration-300 border shadow-sm ${
+                  activeFilter === label
+                    ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white border-transparent shadow-lg"
+                    : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700"
+                }`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {projectsToShow.map((project, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
@@ -35,19 +108,16 @@ const Projects = () => {
               className="group relative overflow-hidden rounded-2xl shadow-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 cursor-pointer"
               onClick={() => setSelectedProject(project)}
             >
-              {/* Glow effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              
-              {/* Project content */}
+
               <div className="p-6 relative z-10 h-full flex flex-col">
-                {/* Project header */}
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-xl font-bold text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                       {project.title}
                     </h3>
                     <p className="text-sm text-gray-500 dark:text-gray-400">
-                      {project.type || 'Web Application'} • {project.year || '2025'}
+                      {project.type || "Web Application"} • {project.year || "2025"}
                     </p>
                   </div>
                   {project.private ? (
@@ -60,13 +130,11 @@ const Projects = () => {
                     </div>
                   )}
                 </div>
-                
-                {/* Project description */}
+
                 <p className="text-gray-600 dark:text-gray-300 mb-6 line-clamp-3">
                   {project.description}
                 </p>
-                
-                {/* Technologies used */}
+
                 <div className="mt-auto">
                   <h4 className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
                     <FaTools className="text-blue-500" />
@@ -93,19 +161,38 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
-              
-              {/* Accent border */}
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </motion.div>
           ))}
         </div>
+
+        {/* See More / See Less */}
+        {filteredProjects.length > 3 && (
+          <div className="mt-8 flex justify-center">
+            {visibleCount < filteredProjects.length ? (
+              <motion.button
+                whileTap={{ scale: 0.98 }}
+                onClick={() => setVisibleCount(filteredProjects.length)}
+                className="px-5 py-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium shadow hover:shadow-lg transition"
+              >
+                See more ({filteredProjects.length - visibleCount} more)
+              </motion.button>
+            ) : (
+              <button
+                onClick={() => setVisibleCount(3)}
+                className="px-5 py-2 rounded-full border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
+              >
+                See less
+              </button>
+            )}
+          </div>
+        )}
       </div>
 
-      {/* Project Modal */}
       {selectedProject && (
-        <ProjectModal 
-          project={selectedProject} 
-          onClose={() => setSelectedProject(null)} 
+        <ProjectModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
         />
       )}
     </section>

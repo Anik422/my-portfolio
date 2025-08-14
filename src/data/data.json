@@ -65,7 +65,7 @@
   "projects": [
     {
       "title": "Gmail Password Validation Automation with Python",
-      "type": "Automation",
+      "type": "Automation Tools",
       "description": "This project offers a Python solution that automates password checking in Gmail, greatly enhancing your email marketing efficiency. With Playwright or Selenium, you are able to save a whopping 50% of time that you would normally spend typing multiple Gmail accounts manually.",
       "technologies": ["Python", "Playwright", "Selenium", "Beautiful Soup"],
       "year": 2021,
@@ -73,7 +73,7 @@
     },
     {
       "title": "NuComply-Generic-Parser",
-      "type": "Web Scraping",
+      "type": "Scraping Tool",
       "description": "Created and developed an automatic web content parsing program to retrieve and process data from several sources, such as PDFs, HTML, and hybrid formats. The tool incorporates a configurable configuration management system for scheduling, retry intervals, and URL-specific parsing flags. By substituting laborious manual content handling procedures, this system computerizes tasks for sub-URL processing and document tracking, with minimal human intervention and errors. The application also leverages the latest technologies such as OpenAI's dynamic XPath generation API, which further automates data extraction workflows.",
       "technologies": [
         "Python",
@@ -161,6 +161,15 @@
       "duration": "Jan 2012 - Feb 2017",
       "details": "GPA: 4.05",
       "coursework": "Science, Math, English, Bengali, and Social Science."
+    }
+  ],
+  "gigsData": [
+    {
+      "id": 1,
+      "title": "I will do professional web scraping and data mining using python",
+      "imageUrl": "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/444869751/original/b051c878d4e9af2638c581da6affb2f9559bb199/do-professional-web-scraping-and-data-mining-using-python.png",
+      "link": "https://www.fiverr.com/s/dD1rkWZ",
+      "description": "Automate data collection with expert Python web scraping. I deliver clean, structured data from any website for lead generation, market analysis, or e-commerce, saving you valuable time and effort."
     }
   ]
 }

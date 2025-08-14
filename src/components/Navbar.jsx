@@ -9,7 +9,7 @@ const Navbar = ({ darkMode, toggleDarkMode, scrollTo, activeSection, isMobile })
   const { name } = data.personalInfo;
   const [menuOpen, setMenuOpen] = useState(false);
   const [hoveredLink, setHoveredLink] = useState(null);
-  const navItems = ['home', 'skills', 'experience', 'projects', 'education'];
+  const navItems = ['home', 'skills', 'experience', 'projects', 'education', "fiverr"];
 
   const handleScroll = (name) => {
     scrollTo(name);
