@@ -27,18 +27,62 @@ const Education = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
               className="relative group"
             >
-              <div className="absolute inset-0 bg-white dark:bg-gray-700 rounded-xl shadow-lg transform group-hover:scale-105 transition-all duration-300"></div>
+              <motion.div
+                animate={{
+                  boxShadow: [
+                    '0 10px 25px rgba(0, 0, 0, 0.05)',
+                    '0 20px 50px rgba(59, 130, 246, 0.15)',
+                    '0 10px 25px rgba(0, 0, 0, 0.05)'
+                  ]
+                }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="absolute inset-0 bg-white dark:bg-gray-800 rounded-xl transform group-hover:scale-105 transition-all duration-300"
+              />
 
-              <div className="relative h-full p-6 border-2 border-gray-200 dark:border-gray-600 rounded-xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm overflow-hidden">
+              <motion.div
+                animate={{
+                  borderColor: [
+                    'rgba(229, 231, 235, 1)',
+                    'rgba(59, 130, 246, 0.5)',
+                    'rgba(229, 231, 235, 1)'
+                  ]
+                }}
+                transition={{ duration: 4, repeat: Infinity }}
+                className="relative h-full p-6 border-2 rounded-xl bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm overflow-hidden shadow-elevation hover:shadow-elevation-lg transition-all"
+              >
                 {/* Decorative elements */}
-                <div className="absolute top-0 right-0 w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-bl-full opacity-30"></div>
-                <div className="absolute bottom-0 left-0 w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-tr-full opacity-30"></div>
+                <motion.div
+                  animate={{
+                    scale: [1, 1.2, 1],
+                    opacity: [0.3, 0.5, 0.3]
+                  }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                  className="absolute top-0 right-0 w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-bl-full opacity-30"
+                />
+                <motion.div
+                  animate={{
+                    scale: [1, 1.2, 1],
+                    opacity: [0.3, 0.5, 0.3]
+                  }}
+                  transition={{ duration: 4, repeat: Infinity, delay: 0.2 }}
+                  className="absolute bottom-0 left-0 w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-tr-full opacity-30"
+                />
 
                 <div className="relative z-10">
-                  <div className="w-14 h-14 mb-4 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center text-blue-600 dark:text-blue-300">
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.1, 1],
+                      rotate: [0, 360]
+                    }}
+                    transition={{
+                      scale: { duration: 2, repeat: Infinity },
+                      rotate: { duration: 6, repeat: Infinity, ease: "linear" }
+                    }}
+                    className="w-14 h-14 mb-4 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 flex items-center justify-center text-blue-600 dark:text-blue-300 shadow-md"
+                  >
                     {index === 0 ? (
                       <FaUniversity className="text-xl" />
                     ) : index === 1 ? (
@@ -46,7 +90,7 @@ const Education = () => {
                     ) : (
                       <FaSchool className="text-xl" />
                     )}
-                  </div>
+                  </motion.div>
 
                   <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">{edu.institution}</h3>
                   <p className="text-blue-600 dark:text-blue-300 font-medium mb-3">{edu.degree}</p>
@@ -66,7 +110,7 @@ const Education = () => {
                     <p className="text-sm text-gray-600 dark:text-gray-400">{edu.coursework}</p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>

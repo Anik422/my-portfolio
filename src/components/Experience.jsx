@@ -11,16 +11,16 @@ const Experience = () => {
   // Function to format date range
   const formatDateRange = (startDate, endDate) => {
     const start = new Date(startDate);
-    const end = endDate === "Present" ? new Date() : new Date(endDate);
+    const isPresent = !endDate || endDate === "Present";
+    const end = isPresent ? new Date() : new Date(endDate);
 
     const startStr = start.toLocaleDateString("en-US", {
       month: "short",
       year: "numeric",
     });
-    const endStr =
-      endDate === "Present"
-        ? "Present"
-        : end.toLocaleDateString("en-US", { month: "short", year: "numeric" });
+    const endStr = isPresent
+      ? "Present"
+      : end.toLocaleDateString("en-US", { month: "short", year: "numeric" });
 
     // Calculate duration in years and months
     const months =
@@ -38,7 +38,7 @@ const Experience = () => {
 
     return {
       formatted: `${startStr} - ${endStr}`,
-      duration: durationStr || "0 mo",
+      duration: durationStr || "< 1 mo",
     };
   };
 
@@ -59,8 +59,15 @@ const Experience = () => {
         </motion.h2>
 
         <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-8 top-0 h-full w-0.5 bg-blue-200 dark:bg-gray-700"></div>
+          {/* Timeline line with gradient and animation */}
+          <motion.div
+            animate={{
+              backgroundPosition: ['0% 0%', '0% 100%', '0% 0%']
+            }}
+            transition={{ duration: 3, repeat: Infinity }}
+            className="absolute left-8 top-0 h-full w-1 rounded-full bg-gradient-to-b from-blue-300 via-purple-400 to-blue-300 dark:from-blue-500 dark:via-purple-500 dark:to-blue-500 opacity-60"
+            style={{ backgroundSize: '100% 200%' }}
+          />
 
           <div className="space-y-12">
             {experience.map((exp, index) => {
@@ -78,12 +85,39 @@ const Experience = () => {
                   className="group relative pl-12"
                 >
                   {/* Timeline dot */}
-                  <div className="absolute left-0 top-6 w-4 h-4 rounded-full bg-blue-500 border-4 border-white dark:border-gray-900 z-10"></div>
+                  <motion.div
+                    animate={{
+                      scale: [1, 1.3, 1],
+                      boxShadow: [
+                        '0 0 0px rgba(59, 130, 246, 0.8)',
+                        '0 0 15px rgba(59, 130, 246, 0.8)',
+                        '0 0 0px rgba(59, 130, 246, 0.8)'
+                      ]
+                    }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="absolute left-0 top-6 w-4 h-4 rounded-full bg-blue-500 border-4 border-white dark:border-gray-900 z-10"
+                  />
 
                   {/* Glow effect */}
-                  <div className="absolute -inset-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl opacity-0 group-hover:opacity-10 blur transition duration-300"></div>
+                  <motion.div
+                    animate={{
+                      boxShadow: [
+                        '0 0 0px rgba(59, 130, 246, 0)',
+                        '0 0 20px rgba(59, 130, 246, 0.2)',
+                        '0 0 0px rgba(59, 130, 246, 0)'
+                      ]
+                    }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                    className="absolute -inset-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl opacity-0 group-hover:opacity-10 blur transition duration-300"
+                  />
 
-                  <div className="relative bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-shadow duration-300">
+                  <motion.div
+                    whileHover={{
+                      y: -5,
+                      transition: { duration: 0.3 }
+                    }}
+                    className="relative bg-white dark:bg-gray-800 p-6 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-300 hover:border-blue-500/30 dark:hover:border-blue-400/30 backdrop-blur-sm"
+                  >
                     <div className="flex flex-col sm:flex-row sm:items-start gap-4 mb-4">
                       <div className="p-3 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900 dark:to-blue-800 rounded-xl">
                         <FaBriefcase className="text-blue-600 dark:text-blue-300 text-xl" />
@@ -168,7 +202,7 @@ const Experience = () => {
                         </div>
                       </div>
                     )}
-                  </div>
+                  </motion.div>
                 </motion.div>
               );
             })}

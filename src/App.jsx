@@ -1,24 +1,43 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import Header from './components/Header';
-import Skills from './components/Skills';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
-import Education from './components/Education';
-import Footer from './components/Footer';
-import Fiverr from './components/Fiverr'; // <-- এই লাইনটি যোগ করুন
+
+// Lazy load components for better performance
+const Skills = lazy(() => import('./components/Skills'));
+const Experience = lazy(() => import('./components/Experience'));
+const Projects = lazy(() => import('./components/Projects'));
+const Education = lazy(() => import('./components/Education'));
+const Footer = lazy(() => import('./components/Footer'));
+
+// Loading component
+const Loading = () => (
+  <div className="py-20 text-center text-gray-600 dark:text-gray-400">
+    <div className="inline-block">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+    </div>
+  </div>
+);
 
 function App() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow">
-        <Skills />
-        <Experience />
-        <Projects />
-        <Fiverr /> {/* <-- এই লাইনটি এখানে যোগ করুন */}
-        <Education />
+        <Suspense fallback={<Loading />}>
+          <Skills />
+        </Suspense>
+        <Suspense fallback={<Loading />}>
+          <Experience />
+        </Suspense>
+        <Suspense fallback={<Loading />}>
+          <Projects />
+        </Suspense>
+        <Suspense fallback={<Loading />}>
+          <Education />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </div>
   );
 }

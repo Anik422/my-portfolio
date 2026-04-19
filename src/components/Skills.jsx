@@ -9,6 +9,17 @@ const Skills = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
+  // Get all technologies as a flat array from the new structure
+  const getAllTechnologies = () => {
+    if (Array.isArray(skills.technologies)) {
+      return skills.technologies;
+    }
+    // Handle object structure
+    return Object.values(skills.technologies).flat();
+  };
+
+  const allTech = getAllTechnologies();
+
   // Animation variants for cleaner code
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -48,14 +59,29 @@ const Skills = () => {
           </motion.h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Technologies - now using Languages' style */}
+            {/* Technologies */}
             <motion.div
               variants={itemVariants}
-              className="group relative bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden"
+              whileHover={{ y: -5, transition: { duration: 0.3 } }}
+              className="group relative bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-elevation hover:shadow-elevation-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden backdrop-blur-sm"
             >
               {/* Animated background elements */}
-              <div className="absolute -top-3 -left-3 w-6 h-6 rounded-full bg-blue-500 group-hover:scale-125 transition-transform duration-300 z-0"></div>
-              <div className="absolute -bottom-3 -right-3 w-6 h-6 rounded-full bg-purple-500 group-hover:scale-125 transition-transform duration-300 z-0"></div>
+              <motion.div
+                animate={{
+                  scale: [1, 1.5, 1],
+                  opacity: [0.3, 0.6, 0.3]
+                }}
+                transition={{ duration: 4, repeat: Infinity }}
+                className="absolute -top-3 -left-3 w-6 h-6 rounded-full bg-blue-500 group-hover:scale-125 transition-transform duration-300 z-0"
+              />
+              <motion.div
+                animate={{
+                  scale: [1, 1.5, 1],
+                  opacity: [0.3, 0.6, 0.3]
+                }}
+                transition={{ duration: 4, repeat: Infinity, delay: 0.2 }}
+                className="absolute -bottom-3 -right-3 w-6 h-6 rounded-full bg-purple-500 group-hover:scale-125 transition-transform duration-300 z-0"
+              />
 
               {/* Subtle gradient overlay on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 to-purple-50/30 dark:from-blue-900/10 dark:to-purple-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -74,9 +100,9 @@ const Skills = () => {
                 </div>
               </div>
 
-              {/* Technologies grid - now using flex layout */}
+              {/* Technologies grid */}
               <div className="flex flex-wrap gap-3 relative z-10">
-                {skills.technologies.map((tech, index) => (
+                {allTech.map((tech, index) => (
                   <motion.div
                     key={`tech-${index}`}
                     initial={{ opacity: 0, y: 10 }}
@@ -90,11 +116,7 @@ const Skills = () => {
                     whileHover={{
                       y: -3,
                       backgroundColor: "rgba(219, 234, 254, 0.7)",
-                      borderColor: "rgba(96, 165, 250, 0.5)",
-                      dark: {
-                        backgroundColor: "rgba(30, 58, 138, 0.3)",
-                        borderColor: "rgba(129, 140, 248, 0.5)"
-                      }
+                      borderColor: "rgba(96, 165, 250, 0.5)"
                     }}
                     className="flex items-center gap-3 px-4 py-3 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-sm 
                    hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all 
@@ -109,14 +131,29 @@ const Skills = () => {
               </div>
             </motion.div>
 
-            {/* Languages - now using Technologies' style */}
+            {/* Languages */}
             <motion.div
               variants={itemVariants}
-              className="group relative bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden"
+              whileHover={{ y: -5, transition: { duration: 0.3 } }}
+              className="group relative bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-elevation hover:shadow-elevation-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 overflow-hidden backdrop-blur-sm"
             >
               {/* Decorative elements */}
-              <div className="absolute -top-3 -left-3 w-6 h-6 rounded-full bg-purple-500 group-hover:scale-125 transition-transform z-0"></div>
-              <div className="absolute -bottom-3 -right-3 w-6 h-6 rounded-full bg-pink-500 group-hover:scale-125 transition-transform z-0"></div>
+              <motion.div
+                animate={{
+                  scale: [1, 1.5, 1],
+                  opacity: [0.3, 0.6, 0.3]
+                }}
+                transition={{ duration: 4, repeat: Infinity }}
+                className="absolute -top-3 -left-3 w-6 h-6 rounded-full bg-purple-500 group-hover:scale-125 transition-transform z-0"
+              />
+              <motion.div
+                animate={{
+                  scale: [1, 1.5, 1],
+                  opacity: [0.3, 0.6, 0.3]
+                }}
+                transition={{ duration: 4, repeat: Infinity, delay: 0.2 }}
+                className="absolute -bottom-3 -right-3 w-6 h-6 rounded-full bg-pink-500 group-hover:scale-125 transition-transform z-0"
+              />
 
               {/* Gradient background effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-purple-50/30 to-pink-50/30 dark:from-purple-900/10 dark:to-pink-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -132,7 +169,7 @@ const Skills = () => {
                 </div>
               </div>
 
-              {/* Languages grid - now using grid layout */}
+              {/* Languages grid */}
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 relative z-10">
                 {skills.languages.map((lang, idx) => (
                   <motion.div
@@ -150,7 +187,7 @@ const Skills = () => {
                    text-sm md:text-base gap-2 hover:shadow-md"
                     whileHover={{
                       scale: 1.05,
-                      borderColor: "rgba(168, 85, 247, 0.5)" // purple-500
+                      borderColor: "rgba(168, 85, 247, 0.5)"
                     }}
                   >
                     <div className="w-8 h-8 flex items-center justify-center">
@@ -165,10 +202,24 @@ const Skills = () => {
             {/* Problem Solving */}
             <motion.div
               variants={itemVariants}
-              className="lg:col-span-2 relative bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 p-8 rounded-2xl shadow-2xl overflow-hidden"
+              className="lg:col-span-2 relative bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 p-8 rounded-2xl shadow-elevation-lg overflow-hidden group"
             >
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full filter blur-3xl"></div>
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-purple-400/20 rounded-full filter blur-3xl"></div>
+              <motion.div
+                animate={{
+                  opacity: [0.1, 0.2, 0.1],
+                  scale: [1, 1.1, 1]
+                }}
+                transition={{ duration: 5, repeat: Infinity }}
+                className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full filter blur-3xl"
+              />
+              <motion.div
+                animate={{
+                  opacity: [0.1, 0.2, 0.1],
+                  scale: [1, 1.1, 1]
+                }}
+                transition={{ duration: 5, repeat: Infinity, delay: 0.5 }}
+                className="absolute bottom-0 left-0 w-32 h-32 bg-purple-400/20 rounded-full filter blur-3xl"
+              />
 
               <div className="relative z-10">
                 <div className="flex flex-col md:flex-row md:items-center gap-6 mb-10">
@@ -201,19 +252,21 @@ const Skills = () => {
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.03 }}
                             whileTap={{ scale: 0.98 }}
-                            className={`flex items-center gap-3 p-4 rounded-xl transition-all ${url ?
-                              'bg-white/10 hover:bg-white/20 cursor-pointer backdrop-blur-sm' :
-                              'bg-white/5'}`}
+                            className={`flex items-center gap-3 p-4 rounded-xl transition-all ${
+                              url
+                                ? 'bg-white/10 hover:bg-white/20 cursor-pointer backdrop-blur-sm'
+                                : 'bg-white/5'
+                            }`}
                           >
-                            <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${url ?
-                              'bg-gradient-to-br from-yellow-400 to-yellow-600 text-white' :
-                              'bg-white/20'}`}>
+                            <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${
+                              url
+                                ? 'bg-gradient-to-br from-yellow-400 to-yellow-600 text-white'
+                                : 'bg-white/20'
+                            }`}>
                               {index + 1}
                             </div>
                             <div className="flex-1">
-                              <span className="font-medium text-white">
-                                {name}
-                              </span>
+                              <span className="font-medium text-white">{name}</span>
                               {url && (
                                 <div className="text-xs text-blue-100 flex items-center gap-1 mt-1">
                                   <FaExternalLinkAlt className="opacity-70" />
@@ -244,20 +297,32 @@ const Skills = () => {
                         const url = match ? match[2] : null;
 
                         return (
-                          <motion.div
+                          <motion.a
                             key={index}
+                            href={url || '#'}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className="group relative"
+                            className={`group relative block ${url ? 'cursor-pointer' : ''}`}
                           >
-                            <div className={`bg-white/10 p-5 rounded-xl transition-all backdrop-blur-sm ${url ?
-                              'hover:bg-white/20 cursor-pointer' : ''}`}>
+                            <div className={`bg-white/10 p-5 rounded-xl transition-all backdrop-blur-sm ${
+                              url ? 'hover:bg-white/20' : ''
+                            }`}>
                               <div className="flex items-center justify-between gap-4">
                                 <div className="flex items-center gap-4">
                                   <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center shrink-0">
                                     <FaAward className="text-white text-lg" />
                                   </div>
-                                  <span className="text-white font-medium">{name}</span>
+                                  <div className="flex-1">
+                                    <span className="text-white font-medium block">{name}</span>
+                                    {url && (
+                                      <div className="text-xs text-blue-100 flex items-center gap-1 mt-1">
+                                        <FaExternalLinkAlt className="opacity-70" />
+                                        <span>View certificate</span>
+                                      </div>
+                                    )}
+                                  </div>
                                 </div>
                                 {url && (
                                   <div className="p-2 bg-white/20 rounded-full group-hover:bg-white/30 transition-colors">
@@ -266,16 +331,7 @@ const Skills = () => {
                                 )}
                               </div>
                             </div>
-                            {url && (
-                              <a
-                                href={url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="absolute inset-0 z-10"
-                                aria-label={`View ${name} certificate`}
-                              />
-                            )}
-                          </motion.div>
+                          </motion.a>
                         );
                       })}
                     </div>

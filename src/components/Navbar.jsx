@@ -18,7 +18,7 @@ const Navbar = ({ darkMode, toggleDarkMode, scrollTo, activeSection, isMobile })
 
 
   return (
-    <nav className="fixed w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-50 shadow-sm border-b border-gray-100 dark:border-gray-800">
+    <nav className="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl z-50 shadow-sm border-b border-gray-100 dark:border-gray-800">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         <a 
           href="#home" 
@@ -104,7 +104,7 @@ const Navbar = ({ darkMode, toggleDarkMode, scrollTo, activeSection, isMobile })
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white dark:bg-gray-800 shadow-md overflow-hidden"
+            className="md:hidden bg-white/95 dark:bg-gray-800/95 shadow-lg backdrop-blur-xl overflow-hidden border-t border-gray-100 dark:border-gray-700"
             transition={{ duration: 0.3 }}
           >
             <div className="container mx-auto px-4 flex flex-col">

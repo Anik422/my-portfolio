@@ -69,29 +69,32 @@ const Projects = () => {
           {/* Search Bar */}
           <div className="relative w-full md:w-1/3">
             <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
-            <input
+            <motion.input
+              whileFocus={{ scale: 1.02 }}
               type="text"
               placeholder="Search projects..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 rounded-full border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full pl-10 pr-4 py-3 rounded-full border-2 border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all shadow-sm hover:shadow-md"
             />
           </div>
 
           {/* Filter Pills */}
           <div className="flex flex-wrap justify-center gap-2">
             {FILTERS.map((label) => (
-              <button
+              <motion.button
                 key={label}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 onClick={() => setActiveFilter(label)}
-                className={`px-4 py-1 rounded-full text-sm font-medium transition-all duration-300 border shadow-sm ${
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border shadow-md ${
                   activeFilter === label
                     ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white border-transparent shadow-lg"
-                    : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700"
+                    : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-700 hover:shadow-lg"
                 }`}
               >
                 {label}
-              </button>
+              </motion.button>
             ))}
           </div>
         </motion.div>
@@ -104,11 +107,21 @@ const Projects = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="group relative overflow-hidden rounded-2xl shadow-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 cursor-pointer"
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+              className="group relative overflow-hidden rounded-2xl shadow-elevation hover:shadow-elevation-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 cursor-pointer backdrop-blur-sm"
               onClick={() => setSelectedProject(project)}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <motion.div
+                animate={{
+                  background: [
+                    'linear-gradient(0deg, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.1))',
+                    'linear-gradient(180deg, rgba(168, 85, 247, 0.1), rgba(59, 130, 246, 0.1))',
+                    'linear-gradient(0deg, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.1))'
+                  ]
+                }}
+                transition={{ duration: 4, repeat: Infinity }}
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              />
 
               <div className="p-6 relative z-10 h-full flex flex-col">
                 <div className="flex items-start justify-between mb-4">

@@ -1,103 +1,115 @@
 {
   "personalInfo": {
     "name": "Anik Saha",
-    "title": "Software Engineer | Problem Solver",
+    "title": "Full-Stack Software Engineer",
     "email": "aniks422@gmail.com",
+    "phone": "+880-16440-94767",
     "github": "https://github.com/Anik422",
-    "linkedin": "https://www.linkedin.com/in/anik-saha-696a22370/",
+    "linkedin": "https://www.linkedin.com/in/aniksaha422/",
     "resume": "https://docs.google.com/document/d/1hb9_ww4ayFvlaM35-opWJ5stkXEUFCQRnr8heCvFJk0/export?format=pdf",
-    "summary": "Passionate software engineer with expertise in web development and problem solving. Strong background in competitive programming with 1000+ problems solved across platforms."
+    "summary": "Experienced Software Engineer at Devotrix Inc with expertise in full-stack SaaS development. Proficient in React 19, FastAPI, and PostgreSQL with strong background in AI integrations, automation, and competitive programming (1,000+ problems solved)."
   },
   "skills": {
     "languages": ["C/C++", "Python", "JavaScript", "Java", "SQL"],
     "problemSolving": {
-      "description": "Proven ability to tackle complex problems through strong performance on platforms like:",
+      "description": "Solved 1,000+ algorithmic problems across multiple platforms",
       "platforms": [
-        "LeetCode [https://leetcode.com/u/aniks422/]",
-        "Codeforces [https://codeforces.com/profile/Anik422]",
+        "Codeforces (Peak: 914) [https://codeforces.com/profile/Anik422]",
+        "CodeChef (Peak: 1367) [https://www.codechef.com/users/Anik422]",
         "HackerRank [https://www.hackerrank.com/aniks422]",
-        "CodeChef [https://www.codechef.com/users/Anik422]",
-        "Beecrowd [https://judge.beecrowd.com/en/profile/588842]",
+        "LeetCode [https://leetcode.com/u/aniks422/]",
+        "BeeCrowd [https://judge.beecrowd.com/en/profile/588842]",
         "AtCoder [https://atcoder.jp/users/Anik422]",
         "Stack Overflow [https://stackoverflow.com/users/19297087/anik-saha]"
       ],
-      "problemsSolved": "Solved over 1000 problems across these platforms"
+      "problemsSolved": "1,000+ problems with strong foundation in data structures and algorithms"
     },
     "certificates": [
-      "Python (Basic) Certificate by HackerRank [https://www.hackerrank.com/certificates/d40ea883f8cf]",
-      "JavaScript (Basic) Certificate by HackerRank [https://www.hackerrank.com/certificates/f2789ace0deb]",
-      "Problem Solving (Basic) Certificate by HackerRank [https://www.hackerrank.com/certificates/01642fd1724a]"
+      "Python (Basic) – HackerRank [https://www.hackerrank.com/certificates/d40ea883f8cf]",
+      "JavaScript (Basic) – HackerRank [https://www.hackerrank.com/certificates/f2789ace0deb]",
+      "Problem Solving (Basic) – HackerRank [https://www.hackerrank.com/certificates/01642fd1724a]"
     ],
-    "technologies": [
-      "Django", "Fast API", "ReactJS", "Redux",
-      "Bootstrap", "Tailwind CSS", "Material UI",
-      "MySQL", "PostgreSQL", "SQLite",
-      "Git", "GitHub",
-      "POSTMAN",
-      "Selenium", "Playwright",
-      "Beautiful Soup", "Requests", "Scrapy"
-    ]
+    "technologies": {
+      "webDevelopment": ["Django", "FastAPI", "ReactJS", "React 19", "Bootstrap 5", "Tailwind CSS", "Material UI"],
+      "databases": ["MySQL", "PostgreSQL", "SQLite"],
+      "automation": ["Selenium WebDriver", "Playwright", "Beautiful Soup", "Scrapy"],
+      "aiPowered": ["Claude AI", "GitHub Copilot", "OpenAI API", "Azure AI"],
+      "devOps": ["Git", "GitHub", "Postman"]
+    }
   },
   "experience": [
     {
-      "company": "Trademajestic Limited, Dhaka",
-      "position": "Jr. Software Engineer (Backend)",
-      "duration": "",
+      "company": "Devotrix Inc",
+      "position": "Software Engineer",
+      "duration": "Oct 2024 - Present",
+      "location": "Remote",
       "achievements": [
-        "Designed a web platform for centralized streetlight control, increasing operational efficiency by 30% using Django and MySQL.",
-        "Streamlined planning using Google Maps API, reducing labor by 50% and improving accuracy for city planning projects."
+        "Developed full-stack SaaS applications using React 19, FastAPI, and PostgreSQL with 80+ REST API endpoints.",
+        "Implemented RBAC, Row-Level Security, and multi-tenant data isolation for enterprise clients.",
+        "Built automation pipelines handling 120+ data sources with Selenium, APScheduler, and AI integrations (OpenAI/Azure).",
+        "Integrated WebSocket notifications, Zoom/Google OAuth, and WhatsApp Business API for real-time collaboration."
       ],
-      "startDate": "2022-09-01",
-      "endDate": "Present"
+      "startDate": "2024-10-01",
+      "endDate": ""
     },
     {
-      "company": "Devotrix Inc, Khulna",
-      "position": "Intern (Software Development)",
-      "duration": "",
+      "company": "Trademajestic Limited",
+      "position": "Jr. Software Engineer",
+      "duration": "Jun 2022 - Sep 2024",
+      "location": "Dhaka",
       "achievements": [
-        "Gained practical experience in advanced web scraping, FastAPI, and OpenAI API integration, applying these tools to AI-driven data collection projects.",
-        "Focused on creating scalable, real-world solutions while enhancing proficiency in backend development and API optimization."
+        "Built and maintained web applications using Django, JavaScript, and PostgreSQL for municipal clients.",
+        "Integrated Google Maps API to develop location-based tools that automated field operations and reduced labor costs.",
+        "Managed full development lifecycle from database design to deployment across multiple concurrent projects."
       ],
       "startDate": "2022-06-01",
-      "endDate": "2022-09-01"
+      "endDate": "2024-09-01"
     }
   ],
   "projects": [
     {
-      "title": "Gmail Password Validation Automation with Python",
-      "type": "Automation Tools",
-      "description": "This project offers a Python solution that automates password checking in Gmail, greatly enhancing your email marketing efficiency. With Playwright or Selenium, you are able to save a whopping 50% of time that you would normally spend typing multiple Gmail accounts manually.",
-      "technologies": ["Python", "Playwright", "Selenium", "Beautiful Soup"],
-      "year": 2021,
+      "title": "Kinex - Enterprise Task & Project Management Platform",
+      "type": "Web Application",
+      "description": "Architected a multi-tenant SaaS platform with real-time Kanban/Gantt views and 80+ API endpoints. Built AI-powered natural-language analytics engine with GPT-4o for conversational project data queries. Integrated WebSocket notifications, Zoom/Google OAuth SSO, and WhatsApp Business API for team collaboration. Designed Row-Level Security schema with composite indexes for strict multi-tenant data isolation.",
+      "technologies": [
+        "React 19",
+        "FastAPI",
+        "PostgreSQL",
+        "WebSocket",
+        "GPT-4o",
+        "OAuth",
+        "Tailwind CSS"
+      ],
+      "year": 2024,
       "private": true
     },
     {
-      "title": "NuComply-Generic-Parser",
-      "type": "Scraping Tool",
-      "description": "Created and developed an automatic web content parsing program to retrieve and process data from several sources, such as PDFs, HTML, and hybrid formats. The tool incorporates a configurable configuration management system for scheduling, retry intervals, and URL-specific parsing flags. By substituting laborious manual content handling procedures, this system computerizes tasks for sub-URL processing and document tracking, with minimal human intervention and errors. The application also leverages the latest technologies such as OpenAI's dynamic XPath generation API, which further automates data extraction workflows.",
+      "title": "NuComply - Regulatory Compliance RAG Automation",
+      "type": "Automation Tools",
+      "description": "Built an ingestion pipeline for 120+ regulatory sources using Selenium, Cloudscraper, and Federal Register APIs with Cloudflare bypass and content-hash deduplication. Developed scheduler-driven async architecture (APScheduler) with AI-generated titles (OpenAI/Azure) and automated RAG pipeline processing.",
       "technologies": [
         "Python",
         "FastAPI",
-        "OpenAI API",
         "Selenium",
-        "Beautiful Soup",
+        "APScheduler",
+        "OpenAI API",
+        "Azure AI",
         "PostgreSQL"
       ],
-      "year": 2022,
+      "year": 2024,
       "private": true
     },
     {
-      "title": "Park Access Control System",
+      "title": "Road Light Management System",
       "type": "Web Application",
-      "description": "Created an affordable web application for park access control. This web application adopts a combination of QR code, IP, and location for safe login/logout without the need for expensive facial recognition or fingerprint reader. This is an innovative solution that offers a secure and affordable alternative compared to traditional access controls.",
+      "description": "Deployed a centralized web platform for Chittagong City Corporation enabling real-time monitoring and remote control of individual and grouped street lights. Reduced manual inspection workload and improved fault response time through an intuitive dashboard interface.",
       "technologies": [
         "Django",
+        "PostgreSQL",
+        "Google Maps API",
         "Bootstrap",
-        "MySQL",
-        "ReactJS",
-        "Redux",
-        "Material UI",
-        "Google Maps API"
+        "JavaScript",
+        "Real-time Dashboard"
       ],
       "year": 2023,
       "private": true
@@ -105,7 +117,7 @@
     {
       "title": "London Borough Real Estate Platform (LBREP) - Backend",
       "type": "Web Application",
-      "description": "A Django-based real estate listing platform with geographic information system (GIS) capabilities, allowing users to browse properties in London with spatial data and points of interest. The platform features comprehensive property listings, user management, and spatial query functionality.",
+      "description": "A Django-based real estate listing platform with geographic information system (GIS) capabilities. Features comprehensive property listings, user management, and spatial query functionality for browsing properties with spatial data and points of interest.",
       "technologies": [
         "Django 4.2",
         "Django REST Framework",
@@ -113,10 +125,7 @@
         "PostGIS",
         "GDAL",
         "Djoser",
-        "Pillow",
-        "django-cors-headers",
-        "django-filter",
-        "psycopg2"
+        "django-cors-headers"
       ],
       "github": "https://github.com/Anik422/lbrep_backend.git",
       "year": 2023,
@@ -125,27 +134,27 @@
     {
       "title": "London Borough Real Estate Platform - Frontend",
       "type": "Web Application",
-      "description": "A modern React-based frontend application for the London Borough Real Estate Platform (LBREP) that seamlessly connects to a Django REST API backend with advanced GIS functionality for property browsing and management.",
+      "description": "Modern React-based frontend for the LBREP platform that seamlessly connects to Django REST API backend with advanced GIS functionality for property browsing and management.",
       "technologies": [
-          "React 18",
-          "React Router v6",
-          "Context API",
-          "Axios",
-          "React-Leaflet",
-          "React Bootstrap",
-          "CSS3"
-        ],
-        "github": "https://github.com/Anik422/lbrep_course_frontend.git",
-        "year": 2023,
-        "private": false
-      }
+        "React 18",
+        "React Router v6",
+        "Context API",
+        "Axios",
+        "React-Leaflet",
+        "React Bootstrap",
+        "CSS3"
+      ],
+      "github": "https://github.com/Anik422/lbrep_course_frontend.git",
+      "year": 2023,
+      "private": false
+    }
   ],
   "education": [
     {
       "institution": "Green University of Bangladesh (GUB)",
-      "degree": "B.S.E. in Computer Science and Engineering",
-      "duration": "Aug 2022: Running",
-      "details": "CGPA: 3.14 (after 3rd year, 2nd semester)",
+      "degree": "B.Sc. in Computer Science and Engineering",
+      "duration": "Aug 2022 - Present",
+      "details": "CGPA: 3.16 (after 4th year, 2nd semester)",
       "coursework": "Object-Oriented Programming, Databases, Discrete Math, Data Structures, and Algorithms."
     },
     {
@@ -154,22 +163,6 @@
       "duration": "Aug 2017 - Feb 2022",
       "details": "CGPA: 3.24",
       "coursework": "OOP, Databases, Math, Electronics, Web Development, Computer Architecture, and Organization."
-    },
-    {
-      "institution": "Sohagpur S.K Pilot Model High School",
-      "degree": "Secondary School Certificate (SSC)",
-      "duration": "Jan 2012 - Feb 2017",
-      "details": "GPA: 4.05",
-      "coursework": "Science, Math, English, Bengali, and Social Science."
-    }
-  ],
-  "gigsData": [
-    {
-      "id": 1,
-      "title": "I will do professional web scraping and data mining using python",
-      "imageUrl": "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/444869751/original/b051c878d4e9af2638c581da6affb2f9559bb199/do-professional-web-scraping-and-data-mining-using-python.png",
-      "link": "https://www.fiverr.com/s/dD1rkWZ",
-      "description": "Automate data collection with expert Python web scraping. I deliver clean, structured data from any website for lead generation, market analysis, or e-commerce, saving you valuable time and effort."
     }
   ]
 }
