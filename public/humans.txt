@@ -1,0 +1,16 @@
+/* TEAM */
+Developer: Anik Saha
+Twitter: @Anik422
+GitHub: Anik422
+Email: aniks422@gmail.com
+
+/* THANKS */
+Technology: Vite
+Framework: React 19
+Styling: Tailwind CSS
+Animation: Framer Motion
+Icons: React Icons
+
+/* LOCATION */
+Country: Bangladesh
+Timezone: UTC+6
