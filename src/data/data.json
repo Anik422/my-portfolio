@@ -30,7 +30,7 @@
       "Problem Solving (Basic) – HackerRank [https://www.hackerrank.com/certificates/01642fd1724a]"
     ],
     "technologies": {
-      "webDevelopment": ["Django", "FastAPI", "ReactJS", "React 19", "Bootstrap 5", "Tailwind CSS", "Material UI"],
+      "webDevelopment": ["Django", "FastAPI", "ReactJS", "Bootstrap 5", "Tailwind CSS", "Material UI"],
       "databases": ["MySQL", "PostgreSQL", "SQLite"],
       "automation": ["Selenium WebDriver", "Playwright", "Beautiful Soup", "Scrapy"],
       "aiPowered": ["Claude AI", "GitHub Copilot", "OpenAI API", "Azure AI"],

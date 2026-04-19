@@ -16,7 +16,7 @@ const Footer = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="relative py-16 px-4 bg-gradient-to-b from-gray-900 via-gray-900 to-black dark:from-gray-900 dark:via-black dark:to-black text-white overflow-hidden"
+      className="relative py-16 px-4 bg-gradient-to-b from-slate-100 via-white to-slate-100 dark:from-gray-900 dark:via-black dark:to-black text-slate-800 dark:text-white overflow-hidden"
     >
       {/* Animated Background Elements */}
       <motion.div
@@ -58,7 +58,7 @@ const Footer = () => {
                 whileHover={{ scale: 1.1, y: -3 }}
                 whileTap={{ scale: 0.95 }}
                 href={`mailto:${email}`}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-all shadow-md hover:shadow-lg"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-200/70 hover:bg-slate-200 transition-all shadow-md hover:shadow-lg dark:bg-white/10 dark:hover:bg-white/20"
               >
                 <FaEnvelope /> Email
               </motion.a>
@@ -68,7 +68,7 @@ const Footer = () => {
                 href={github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-all shadow-md hover:shadow-lg"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-200/70 hover:bg-slate-200 transition-all shadow-md hover:shadow-lg dark:bg-white/10 dark:hover:bg-white/20"
               >
                 <FaGithub /> GitHub
               </motion.a>
@@ -78,7 +78,7 @@ const Footer = () => {
                 href={linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-all shadow-md hover:shadow-lg"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-200/70 hover:bg-slate-200 transition-all shadow-md hover:shadow-lg dark:bg-white/10 dark:hover:bg-white/20"
               >
                 <FaLinkedin /> LinkedIn
               </motion.a>
@@ -89,7 +89,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 download
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition-all shadow-md hover:shadow-lg"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-200/70 hover:bg-slate-200 transition-all shadow-md hover:shadow-lg dark:bg-white/10 dark:hover:bg-white/20"
               >
                 <FaFileDownload /> Resume
               </motion.a>
@@ -105,7 +105,7 @@ const Footer = () => {
             className="text-center"
           >
             <h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Anik Saha</h3>
-            <p className="text-gray-300">Software Engineer | Problem Solver | Full-Stack Developer</p>
+            <p className="text-slate-600 dark:text-gray-300">Software Engineer | Problem Solver | Full-Stack Developer</p>
           </motion.div>
         </motion.div>
 
@@ -114,7 +114,7 @@ const Footer = () => {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="border-t border-gray-700/50 mt-12 pt-8 text-center text-gray-400"
+          className="border-t border-slate-300/80 dark:border-gray-700/50 mt-12 pt-8 text-center text-slate-500 dark:text-gray-400"
         >
           <motion.p
             animate={{

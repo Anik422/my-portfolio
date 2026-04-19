@@ -1,5 +1,5 @@
 
-import { SiJavascript, SiPython, SiReact, SiScrapy, SiSqlite, SiPostman, SiSelenium, SiGooglemaps, SiLeaflet, SiFastapi, SiRedux, SiAxios, SiReactrouter, SiDjango, SiMui, SiMysql, SiPostgresql } from 'react-icons/si';
+import { SiJavascript, SiPython, SiReact, SiScrapy, SiSqlite, SiPostman, SiSelenium, SiGooglemaps, SiLeaflet, SiFastapi, SiRedux, SiAxios, SiReactrouter, SiDjango, SiMui, SiMysql, SiPostgresql, SiClaude } from 'react-icons/si';
 import { TbBrandCpp, TbFileTypeSql, TbApi } from "react-icons/tb";
 import { RiReactjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { FaJava, FaBootstrap, FaGitAlt, FaGithub, FaTheaterMasks, FaCode, FaCss3Alt } from "react-icons/fa";
@@ -30,6 +30,7 @@ const techIcons = {
   "Scrapy": <SiScrapy className="text-[#E41F24]" />, // Scrapy red
   "Playwright": <FaTheaterMasks className="text-[#5A2A83]" />, // Custom purple mask
   "OpenAI API": <AiOutlineOpenAI className="text-[#412991]" />, // OpenAI purple
+  "Claude AI": <SiClaude className="text-[#D97757]" />, // Anthropic Claude orange
   "React Router": <SiReactrouter className="text-[#CA4245]" />, // React Router red
   "API": <TbApi className="text-green-500" />, // Neutral green
   "Axios": <SiAxios className="text-[#5A29E4]" />, // Axios purple
@@ -39,8 +40,20 @@ const techIcons = {
   "Google Maps API": <SiGooglemaps className="text-[#4285F4]" /> // Google blue
 };
 
+const iconAliases = {
+    "Bootstrap 5": "Bootstrap",
+    "Selenium WebDriver": "Selenium",
+    "Beautiful Soup": "Code",
+    "GitHub Copilot": "GitHub",
+    "Azure AI": "API",
+    "Postman": "POSTMAN",
+};
 
-export const TechIcon = ({ lang }) => {
+
+export const TechIcon = ({ lang, className = "" }) => {
+        const normalizedLang = (typeof lang === "string" ? lang.trim() : "") || "Code";
+        const resolvedLang = iconAliases[normalizedLang] || normalizedLang;
+
     const getBestCharMatchIcon = (lang) => {
         const inputChars = lang.toLowerCase().replace(/\s+/g, '');
 
@@ -68,9 +81,9 @@ export const TechIcon = ({ lang }) => {
     };
 
     return (
-        <>
-            {techIcons[lang] || getBestCharMatchIcon(lang)}
-        </>
+        <span className={className}>
+            {techIcons[resolvedLang] || getBestCharMatchIcon(resolvedLang)}
+        </span>
     );
 };
 
